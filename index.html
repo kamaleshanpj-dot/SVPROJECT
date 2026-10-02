@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10172b">
+  <title>{{ assistant_name }} | Voice & Text Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-icon">✦</div><div><strong>{{ assistant_name }}</strong><small>YOUR PERSONAL LEARNING ASSISTANT</small></div></div>
+      <span class="online"><i></i><span id="backendStatus">Checking backend…</span></span>
+    </header>
+    <section class="hero">
+      <div class="eyebrow">VOICE + TEXT ASSISTANT</div>
+      <h1>How can I help <span>you today?</span></h1>
+      <p>Ask a question or give me a command. Type below or use your microphone.</p>
+    </section>
+    <section class="assistant-card">
+      <div class="orb-wrap"><div class="orb">✦</div></div>
+      <div class="assistant-label"><strong>{{ assistant_name }}</strong><span id="status">Ready when you are</span></div>
+      <div class="response" id="response" aria-live="polite">Your response will appear here. Try one of the suggestions below.</div>
+      <form id="commandForm" class="composer">
+        <input id="commandInput" type="text" maxlength="500" placeholder="Type a command..." autocomplete="off" aria-label="Type a command">
+        <button class="send" type="submit" aria-label="Send command">➤</button>
+      </form>
+      <button id="micButton" class="mic" type="button"><span>🎙</span> Speak a command</button>
+    </section>
+    <section class="examples">
+      <div class="section-title">TRY ASKING</div>
+      <div class="chips">
+        <button type="button" data-command="What is the time?">◷ &nbsp;What time is it?</button>
+        <button type="button" data-command="Today's date">▦ &nbsp;Today's date</button>
+        <button type="button" data-command="Tell me a joke">☻ &nbsp;Tell me a joke</button>
+        <button type="button" data-command="Wikipedia computer science">⌕ &nbsp;Wikipedia search</button>
+        <button type="button" data-command="Open YouTube">▶ &nbsp;Open YouTube</button>
+      </div>
+    </section>
+    <footer>EduGenie <span>•</span> Flask, HTML, CSS & JavaScript</footer>
+  </main>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
